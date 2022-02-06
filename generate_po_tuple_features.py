@@ -196,9 +196,12 @@ def main(mention_file, sense_mapping, save_file, use_all_svos, pca_dim):
  
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--mention_file", help="input <predicate, object head> mentions pickle file")
-    parser.add_argument("--sense_mapping", help="input predicate sense disambiguation result file")
-    parser.add_argument("--save_file", help="output file name")
+    parser.add_argument("--mention_file", help="input <predicate, object head> mentions pickle file",
+                        default='outputs/m2e2/m2e2_svo_salient_po_mention_features.pk')
+    parser.add_argument("--sense_mapping", help="input predicate sense disambiguation result file",
+                        default='outputs/m2e2/po_mention_disambugated.pk')
+    parser.add_argument("--save_file", help="output file name", 
+                        default='outputs/m2e2/po_tuple_features_all_svos.pk')
     parser.add_argument('--use_all_svos', default=False, action='store_true', \
         help="""whether to use all po mentions (i.e., those contain either a salient predicate or an objct head 
                 or a strict set of po mentions (i.e., those contain both a salient predicate and an object head)"""

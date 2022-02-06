@@ -43,8 +43,9 @@ def main(corpus_w_svo_pickle,
     print("start feature extraction ... ")
     svo_id2features = {}
     all_salient_cnt = 0
-    for sent_id in tqdm(corpus):
-        sent_info = corpus[sent_id]
+    sent_id = 0
+    for sent_info in tqdm(corpus):
+        sent_id += 1
         if len(sent_info['svos']) == 0:
             continue
         

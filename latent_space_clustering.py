@@ -300,12 +300,12 @@ if __name__ == "__main__":
         description='train',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('--dataset_path', type=str)
-    parser.add_argument('--input_emb_name', type=str)
+    parser.add_argument('--dataset_path', type=str, default='outputs/m2e2')
+    parser.add_argument('--input_emb_name', type=str, default='po_tuple_features_all_svos.pk')
     parser.add_argument('--lr', type=float, default=5e-4)
     parser.add_argument('--n_clusters', default=30, type=int)
-    parser.add_argument('--input_dim1', default=1000, type=int)
-    parser.add_argument('--input_dim2', default=1000, type=int)
+    parser.add_argument('--input_dim1', default=160, type=int)
+    parser.add_argument('--input_dim2', default=152, type=int)
     parser.add_argument('--agg_method', default="multi", choices=["sum", "multi", "concat", "attend"], type=str)
     parser.add_argument('--sep_decode', default=0, choices=[0, 1], type=int)
     parser.add_argument('--pretrain_epoch', default=100, type=int)
